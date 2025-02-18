@@ -1,0 +1,28 @@
+p{
+    color: orange;
+font-size: 18pt;
+}
+
+#p1{
+    color:blueviolet;
+}
+
+.p2{
+    color: cornflowerblue;
+}
+
+.p2:hover{
+    background-color: black;
+}
+
+#p1:hover{
+    background-color: black;
+}
+
+p:hover{
+    background-color: black;
+}
+
+div a{
+    color: brown;
+}
