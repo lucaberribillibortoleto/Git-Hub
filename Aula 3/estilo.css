@@ -1,0 +1,61 @@
+.dotted{
+    border: 5px dotted blue;
+}
+
+.dashed{
+    border: 5px dashed red;
+}
+
+.solid{
+   border: 5px solid green;
+}
+
+.radious_10{
+    border-radius: 10px;
+}
+
+.shadow{
+    box-shadow: 5px 5px gray;
+}
+
+
+.margin{
+    margin: 10px
+}
+
+
+.padding{
+    padding: 10px;
+}
+
+.width_200{
+    width: 200px;
+}
+.display_inline{
+    display: inline;
+}
+
+.display_block{
+    display: block;
+}
+
+
+
+#div1{
+    background-color: chocolate;
+     display: inline;
+     border: 2px solid black;
+     position: relative;
+     top: 100px;
+     left: 100px;
+ 
+ }
+ 
+ #div2{
+     background-color: chocolate;
+     display:inline;
+     border: 2px solid black;
+     position: relative;
+     top: 100px;
+     left: 100px;
+ }
