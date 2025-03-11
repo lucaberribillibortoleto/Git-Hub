@@ -1,0 +1,57 @@
+#div_1{ 
+    display: flex;
+    justify-content: center;
+   align-items: center;
+}
+
+
+#p1{
+    color:white;
+    display:flex;
+    background-color: purple;
+    border:solid;
+}
+
+#div_2{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_3{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_4{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_5{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+#div_6{
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+    width: 300px;
+    height: 300px;
+}
+
+#div_7{
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+    width: 200px;
+    height: 200px;
+}
