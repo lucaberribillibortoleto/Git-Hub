@@ -27,7 +27,7 @@ body{
     display: flex;
     background-color: lightblue;
     text-align: center;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     height: 50px;
@@ -48,14 +48,58 @@ h2{
    justify-content:center;
    align-items: center;
 }
+
 #div_3{
    display: flex;
-   width: 600px;
-   height: 450px;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+}
+#div_4{
+   display: flex;
    justify-content:space-around;
+   align-items: center;
 }
 
-#tabela th, td{
-   border:1px solid black;
+.img_2{
+   width: auto;
+   height: 500px;
+
+}
+
+#div_5{
+   display: flex;
+   text-align: center;
    justify-content: center;
+   align-items: center;
+}
+
+#div_6{
+   display: flex;
+   justify-content:space-around;
+   align-items: center;
+}
+.img_3{
+   width: auto;
+   height: 300px;
+}
+
+#div_7{
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+}
+#div_8{
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+}
+
+
+#tabela th, td{
+   font-size: 17pt;
+   border:2px dotted red;
+   color:black;
 }
