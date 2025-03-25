@@ -6,7 +6,7 @@ body{
    background-color: bisque;
    display: flex;
    border: 2px solid blue;
-   justify-content: center;
+   justify-content: space-between;
    align-items: center;
    }
  
@@ -102,4 +102,21 @@ h2{
    font-size: 17pt;
    border:2px dotted red;
    color:black;
+}
+
+#th{
+   color:red;
+}
+
+#tabela{
+margin: 0px;
+}
+
+#div_9{
+   background-color: yellow;
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+   
 }
