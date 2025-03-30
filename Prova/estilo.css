@@ -1,0 +1,80 @@
+#div_1{
+    display: flex;
+    background-color: blue;
+    text-align: center;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 50px;
+}
+
+.a1{
+    color:white;
+    padding: 5px;
+}
+
+#div_2{
+    display: flex;
+}
+
+
+#p_2{
+    display: flex;
+    color:white;
+    background-color: orange;
+    text-align: center; 
+}
+
+#p_3{
+    color:black;
+}
+#div_3{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+#p_4{
+    display: flex;
+    color:white;
+    background-color:green;
+    text-align: center; 
+}
+
+#p_5{
+    display: flex;
+    color:white;
+    background-color: green;
+    text-align: center; 
+}
+
+#div_5{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#p_6{
+    display: flex;
+    color:white;
+    background-color: blue;
+    text-align: center; 
+}
+
+#div_9{
+    display: flex;
+    background-color: blue;
+    text-align: center;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 50px;
+}
+
+#p_7{
+    color:white;
+    padding: 5px;
+}

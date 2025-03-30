@@ -1,0 +1,122 @@
+body{
+   background-color: lightgray;
+}
+
+#div_1{
+   background-color: bisque;
+   display: flex;
+   border: 2px solid blue;
+   justify-content: space-between;
+   align-items: center;
+   }
+ 
+  h1{
+   color: darkgreen;
+  }
+
+.img_1{
+    width:150px;
+    text-align: center;
+    top: -15px;
+    justify-content: space-between;
+ }
+
+
+
+ #div_2{
+    display: flex;
+    background-color: lightblue;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 50px;
+   
+ }
+
+ #h2{
+    text-align: center;
+    justify-content: center;
+ }
+
+.p1{
+   color: purple;
+   font-size: 20pt;
+}
+
+h2{
+   justify-content:center;
+   align-items: center;
+}
+
+#div_3{
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+}
+#div_4{
+   display: flex;
+   justify-content:space-around;
+   align-items: center;
+}
+
+.img_2{
+   width: auto;
+   height: 500px;
+
+}
+
+#div_5{
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+}
+
+#div_6{
+   display: flex;
+   justify-content:space-around;
+   align-items: center;
+}
+.img_3{
+   width: auto;
+   height: 300px;
+}
+
+#div_7{
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+}
+#div_8{
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+}
+
+
+#tabela th, td{
+   font-size: 17pt;
+   border:2px dotted red;
+   color:black;
+}
+
+#th{
+   color:red;
+}
+
+#tabela{
+margin: 0px;
+}
+
+#div_9{
+   background-color: yellow;
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+   
+}

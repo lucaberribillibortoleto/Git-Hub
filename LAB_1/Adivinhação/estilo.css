@@ -1,0 +1,18 @@
+body{
+    background-color: blue;
+}
+
+#div_1{
+    display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+   padding: 15px;
+}
+
+#div_2{
+    display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+}
