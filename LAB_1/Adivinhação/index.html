@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Adivinhação</title>
-        <meta charset="UTF-8">
-        <link href="estilo.css" rel="stylesheet">
-        
-     </head>
-     <body>
-       <div id="div_1">
-        <p><input type="number" id="numero_escolhido"></p>
-       </div> 
-       <div id="div_2">
-        <input type="button" value="Clique aqui" onclick="Adivinhação()">
-        <p id="Adivinhação_resp"></p>
-       </div>
-        <script src="script.js" type="text/javascript"></script>
-    </body>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Adivinhação</title>
+    <link href="estilo.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Jogo de Adivinhação</h1>
+    <p>Digite um número entre 0 e 99:</p>
+    <input type="number" id="resp" min="0" max="99">
+    <button onclick="Adivinhação()">Clique aqui</button>
+    <p id="Adivinhação_resp"></p>
+
+    <script src="script.js"></script> 
+</body>
+</html>

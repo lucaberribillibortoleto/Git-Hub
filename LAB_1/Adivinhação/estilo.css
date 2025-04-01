@@ -1,18 +1,30 @@
-body{
+body {
+    text-align: center;
+    background-color: blue; 
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    width: 50%;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
     background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
-#div_1{
-    display: flex;
-   text-align: center;
-   justify-content: center;
-   align-items: center;
-   padding: 15px;
+button:hover {
+    background-color: darkblue;
 }
 
-#div_2{
-    display: flex;
-   text-align: center;
-   justify-content: center;
-   align-items: center;
+#Adivinhação_resp {
+    font-size: 18px;
+    margin-top: 20px;
 }
