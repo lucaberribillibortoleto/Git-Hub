@@ -17,7 +17,7 @@
 //};
 
 class Carro {
-    construtor(cor, modelo, marca){
+    constructor(cor, modelo, marca){
         this.cor = cor;
         this.modelo = modelo;
         this.marca = marca;
@@ -47,8 +47,8 @@ for(let i = 0; i < carros.length; i++){
 }
 
 
-class retangulo{
-    construtor(cor_linha, cor_preenchimento, espessura_linha, x, y, largura, altura){
+class Retangulo{
+    constructor(cor_linha, cor_preenchimento, espessura_linha, x, y, largura, altura){
         this.cor_linha = cor_linha;
         this.cor_preenchimento = cor_preenchimento;
         this.espessura_linha = espessura_linha;
@@ -57,13 +57,60 @@ class retangulo{
         this.largura = largura;
         this.altura = altura;
     }
-    desenhe(){
-        ctx.beginPath();
-        ctx.lineWidth = this.espessura_linha;
-        ctx.fillStyle = 'white';
-        ctx.strokeStyle = 'white';
-        ctx.fillRect(30, 330, 40, 40);
-        ctx.strokeRect(30, 330, 40, 40);
-        ctx.closePath();
+    desenhe(contexto){
+        contexto.beginPath();
+        contexto.lineWidth = this.espessura_linha;
+        contexto.fillStyle = this.cor_preenchimento;
+        contexto.strokeStyle = this.cor_linha;
+        contexto.fillRect(this.x, this.y,this.largura,this.altura);
+        contexto.strokeRect(this.x, this.y,this.largura,this.altura);
+        contexto.closePath();
     }
 }
+
+let canvas1 = document.getElementById('canvas1');
+let ctx1 = canvas1.getContext('2d');
+
+let retangulo_1 = new Retangulo('blue', 'red', 3, 0, 0, 20, 20);
+let retangulo_2 = new Retangulo('blue', 'green', 3, 200, 200, 20, 20);
+let retangulo_3 = new Retangulo('blue', 'yellow', 3, 200, 200, 20, 20);
+
+
+function animacao(){
+    if(retangulo_1.x == 400){
+        retangulo_1.x = 0;
+    }
+    retangulo_1.x += 1;
+    ctx1.clearRect(0,0,400,400);
+    retangulo_1.desenhe(ctx1);
+
+    retangulo_2.desenhe(ctx1);
+    retangulo_3.desenhe(ctx1);
+    requestAnimationFrame(animacao);
+}
+
+animacao()
+
+document.addEventListener('keydown', function(evento){
+    let tecla = evento.key;
+    console.log(tecla);
+
+    let velocidade = 5;
+    if(tecla == 'ArrowUp') {retangulo_2.y -= velocidade}
+    if(tecla == 'ArrowDown'){retangulo_2.y += velocidade}
+    if(tecla == 'ArrowLeft'){retangulo_2.x -= velocidade}
+    if(tecla == 'ArrowRight'){retangulo_2.x += velocidade}
+            
+    
+})
+
+
+document.addEventListener('mousemove', function(evento){
+    let rect = canvas1.getBoundingClientRect();
+    let x_mouse = evento.clientX - rect.left;
+    let y_mouse = evento.clientY - rect.top;
+    console.log(x_mouse,y_mouse);
+
+    retangulo_3.x = x_mouse;
+    retangulo_3.y = y_mouse;
+})                                                      
