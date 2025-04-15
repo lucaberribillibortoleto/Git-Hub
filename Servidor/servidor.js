@@ -3,7 +3,7 @@ var http = require("http");
 var express = require("express")
 
 var app = express();
-app.use(express.static('./public'))
+app.use(express.static('./LAB'))
 
 var server = http.createServer(app);
 server.listen(80);
