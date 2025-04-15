@@ -1,201 +1,97 @@
-let canvas = document.getElementById('canvas');
-let ctx = canvas.getContext('2d');
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+
+
+function drawRect(x, y, w, h, color, stroke = true) {
+  ctx.beginPath();
+  ctx.lineWidth = 2;
+  ctx.fillStyle = color;
+  ctx.strokeStyle = color;
+  ctx.fillRect(x, y, w, h);
+  if (stroke) ctx.strokeRect(x, y, w, h);
+  ctx.closePath();
+}
+
+function drawCircle(x, y, r, colorFill, colorStroke = colorFill, start = 0, end = 2 * Math.PI) {
+  ctx.beginPath();
+  ctx.lineWidth = 2;
+  ctx.fillStyle = colorFill;
+  ctx.strokeStyle = colorStroke;
+  ctx.arc(x, y, r, start, end);
+  ctx.fill();
+  ctx.stroke();
+  ctx.closePath();
+}
+
+function drawLine(x1, y1, x2, y2, color) {
+  ctx.beginPath();
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = color;
+  ctx.moveTo(x1, y1);
+  ctx.lineTo(x2, y2);
+  ctx.stroke();
+  ctx.closePath();
+}
+
+function drawText(text, x, y, font = "30px Arial", color = "black") {
+  ctx.beginPath();
+  ctx.fillStyle = color;
+  ctx.font = font;
+  ctx.textAlign = "center";
+  ctx.fillText(text, x, y);
+  ctx.closePath();
+}
+
+
+drawRect(0, 0, 70, 70, 'blue');
+drawRect(335, 0, 70, 70, 'red');
+drawRect(0, 335, 70, 70, 'yellow');
+drawRect(330, 335, 70, 70, 'black');
+
+
+drawRect(30, 330, 40, 40, 'white');
+drawRect(320, 330, 40, 40, 'white');
+
+
+drawRect(-15, 160, 60, 80, 'aquamarine');
+drawRect(350, 180, 50, 50, 'aquamarine');
+
+
+drawRect(150, (canvas.height / 2) - 10, 50, 50, 'red');
+
+
+drawCircle(200, 200, 50, 'white', 'green', Math.PI, 0); 
+drawCircle(100, 300, 20, 'yellow', 'green');
+drawCircle(300, 300, 20, 'yellow', 'green');
+drawCircle(200, 180, 20, 'aquamarine', 'black');
+
+
+drawText("Canvas", 195, 70);
+
+
+drawLine(0, 0, canvas.width / 2, canvas.height / 2, 'blue');
+drawLine(canvas.width, 0, canvas.width / 2, canvas.height / 2, 'red');
+drawLine(0, canvas.height / 2, canvas.width, canvas.height / 2, 'green');
+drawLine(canvas.width / 2, canvas.height / 2, canvas.width / 2, canvas.height, 'black');
+
+
+drawCircle(200, canvas.height / 2, 100, 'transparent', 'green', Math.PI, 1.5 * Math.PI);
+drawCircle(200, canvas.height / 2, 100, 'transparent', 'green', 1.5 * Math.PI, 2 * Math.PI);
+drawCircle(canvas.width / 2, canvas.height, 100, 'transparent', 'green', Math.PI, 1.5 * Math.PI);
+drawCircle(canvas.width / 2, canvas.height, 70, 'transparent', 'green', 1.5 * Math.PI, 2 * Math.PI);
+
 
 ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.fillStyle = 'blue';
-ctx.strokeStyle = 'blue';
-ctx.fillRect(0, 0, 70, 70);
-ctx.strokeRect(0, 0, 70, 70);
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.fillStyle = 'red';
-ctx.strokeStyle = 'red';
-ctx.fillRect(335, 0, 70, 70);
-ctx.strokeRect(335, 0, 70, 70);
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.fillStyle = 'yellow';
-ctx.strokeStyle = 'yellow';
-ctx.fillRect(0, 335, 70, 70);
-ctx.strokeRect(0, 335, 70, 70);
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.fillStyle = 'black';
-ctx.strokeStyle = 'black';
-ctx.fillRect(330, 335, 70, 70);
-ctx.strokeRect(330, 335, 70, 70);
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.fillStyle = 'white';
-ctx.strokeStyle = 'white';
-ctx.fillRect(30, 330, 40, 40);
-ctx.strokeRect(30, 330, 40, 40);
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.fillStyle = 'white';
-ctx.strokeStyle = 'white';
-ctx.fillRect(320, 330, 40, 40);
-ctx.strokeRect(320, 330, 40, 40);
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
+ctx.lineWidth = 3;
 ctx.fillStyle = 'aquamarine';
-ctx.strokeStyle = 'aquamarine';
-ctx.fillRect(-15, 160, 60, 80);
-ctx.strokeRect(-15, 160, 60, 80);
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.fillStyle = 'aquamarine';
-ctx.strokeStyle = 'aquamarine';
-ctx.fillRect(350, 180, 50, 50);
-ctx.strokeRect(350, 180, 50, 50);
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.fillStyle = 'red';
-ctx.strokeStyle = 'red';
-
-ctx.fillRect(150, (canvas.height / 2) - 10, 50, 50); 
-ctx.strokeRect(150, (canvas.height / 2) - 10, 50, 50); 
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.fillStyle = 'white';
 ctx.strokeStyle = 'green';
-ctx.arc(200, 200, 50, 1 * Math.PI, 0 * Math.PI);
+ctx.arc(canvas.width / 2, canvas.height, 150, 0, Math.PI);
 ctx.fill();
 ctx.stroke();
 ctx.closePath();
 
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.fillStyle = 'yellow';
-ctx.strokeStyle = 'green';
-ctx.arc(100, 300, 20, 0 * Math.PI, 2 * Math.PI);
-ctx.fill();
-ctx.stroke();
-ctx.closePath();
+drawCircle(canvas.width / 2, canvas.height, 50, 'cyan', 'green', Math.PI, 2 * Math.PI);
 
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.fillStyle = 'yellow';
-ctx.strokeStyle = 'green';
-ctx.arc(300, 300, 20, 0 * Math.PI, 2 * Math.PI);
-ctx.fill();
-ctx.stroke();
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.fillStyle = 'black';
-ctx.strokeStyle = 'black';
-ctx.font = "30px Arial";
-ctx.textAlign = "center";
-ctx.fillText("Canvas", 195, 70);
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.fillStyle = 'aquamarine';
-ctx.strokeStyle = 'black';
-ctx.arc(200, 180, 20, 0 * Math.PI, 2 * Math.PI);
-ctx.fill();
-ctx.stroke();
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.strokeStyle = 'blue';
-ctx.moveTo(0, 0);  
-ctx.lineTo(canvas.width / 2, canvas.height / 2);  
-ctx.stroke();
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.strokeStyle = 'red';
-ctx.moveTo(canvas.width, 0);  
-ctx.lineTo(canvas.width / 2, canvas.height / 2);  
-ctx.stroke();
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.strokeStyle = 'green';
-ctx.moveTo(0, canvas.height / 2);  
-ctx.lineTo(canvas.width, canvas.height / 2);  
-ctx.stroke();
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.strokeStyle = 'green';
-ctx.arc(200, canvas.height / 2, 100, Math.PI, 1.5 * Math.PI);  
-ctx.stroke();
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.strokeStyle = 'green';
-ctx.arc(200, canvas.height / 2, 100, 1.5 * Math.PI, 2 * Math.PI);  
-ctx.stroke();
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.strokeStyle = 'black';
-ctx.moveTo(canvas.width / 2, canvas.height / 2);  
-ctx.lineTo(canvas.width / 2, canvas.height);  
-ctx.stroke();
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.strokeStyle = 'green';
-ctx.arc(canvas.width / 2, canvas.height, 100, Math.PI, 1.5 * Math.PI);  
-ctx.stroke();
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.strokeStyle = 'green';
-ctx.arc(canvas.width / 2, canvas.height, 70, 1.5 * Math.PI, 2 * Math.PI);  
-ctx.stroke();
-ctx.closePath();
- 
-ctx.beginPath();
-ctx.lineWidth = 3; 
-ctx.strokeStyle = 'green'; 
-ctx.fillStyle = 'aquamarine'; 
-ctx.arc(canvas.width / 2, canvas.height, 150, 0, Math.PI);  
-ctx.fill();  
-ctx.stroke();  
-ctx.closePath();
-
-ctx.beginPath();
-ctx.lineWidth = 2;
-ctx.fillStyle = 'cyan'; 
-ctx.strokeStyle = 'green';
-ctx.arc(canvas.width / 2, canvas.height, 50, Math.PI, 2 * Math.PI);  
-ctx.fill();  
-ctx.stroke(); 
-ctx.closePath();
 
 
 
