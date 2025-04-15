@@ -1,5 +1,5 @@
 body {
-    background-color: #f0f8ff; 
+    background-color: blue; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,5 +9,6 @@ body {
   }
   
   canvas {
-    border: 1px solid #000;
+    background-color: white; 
+    border: 5px solid black;
   }
