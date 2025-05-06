@@ -83,6 +83,62 @@ app.post('/logar',function(requisicao, resposta){
     })
 })
 
+app.post('/atualizar_senha', function(requisicao, resposta){
+    let login = requisicao.body.login;
+    let senha = requisicao.body.senha;
+    let novasenha = requisicao.body.novasenha;
+
+    let data = { db_login: login, db_senha: senha }
+    let new_data = { $set: {db_senha: novasenha}}
+
+usuarios.updateOne(data, new_data, function(err, result){
+    console.log(result);
+    if (result.modifiedCount == 0) {
+        resposta.render('resposta_login', {status: "Usuário/senha não encontrado!"})
+    }else if (err) {
+        resposta.render('resposta_login', {status: "Erro ao logar usuário!"})
+    }else {
+        resposta.render('resposta_login', {status: "Usuário atualizado com sucesso!"})
+    };
+})
+
+})
+
+app.post('/remover_usuario', function(requisicao, resposta){
+    let login = requisicao.body.login;
+    let senha = requisicao.body.senha;
+
+    let data = {db_login: login, db_senha: senha}
+
+    usuarios.deleteOne(data, function(err, result){
+        console.log(result);
+        if (result.deletedCount == 0) {
+            resposta.render('resposta_login', {status: "Usuário/senha não encontrado!"})
+        }else if (err) {
+            resposta.render('resposta_login', {status: "Erro ao remover usuário!"})
+        }else {
+            resposta.render('resposta_login', {status: "Usuário removido com sucesso!"})
+        };
+    })
+})
+
+
+
+//Get,Post e Template
+
+app.post("/", function(requisicao, resposta){
+    resposta.redirect("LAB/projects.html")
+})
+
+app.post("/cadastra", function(requisicao, resposta){
+    resposta.redirect("LAB/Get_Post_Template/cadastro.html")
+})
+
+app.post("/login", function(requisicao, resposta){
+    resposta.redirect("LAB/Get_Post_Template/login.html")
+})
+
+
 
 
 
