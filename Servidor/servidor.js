@@ -139,8 +139,3 @@ app.post("/login", function(requisicao, resposta){
 })
 
 
-
-
-
-
-
