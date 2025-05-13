@@ -124,11 +124,8 @@ app.post('/remover_usuario', function(requisicao, resposta){
 
 
 
-//Get,Post e Template
 
-app.post("/", function(requisicao, resposta){
-    resposta.redirect("LAB/projects.html")
-})
+//get post template
 
 app.post("/cadastra", function(requisicao, resposta){
     resposta.redirect("LAB/Get_Post_Template/cadastro.html")
@@ -139,3 +136,40 @@ app.post("/login", function(requisicao, resposta){
 })
 
 
+app.post("/fazer_cadastro", function(requisicao, resposta){
+    let login = requisicao.body.login;
+    let senha = requisicao.body.senha;
+    
+    console.log(login, senha)
+
+    var data = { db_login: login, db_senha: senha};
+    
+    usuarios.insertOne(data, function(err){
+        console.log(err)
+        if(err){
+          resposta.render('resposta2.ejs', {status: "Erro ao cadastrar usuário!",login, senha})
+        }else {
+          resposta.render('resposta2.ejs', {status: "Usuário cadastrado com sucesso!",login, senha})        
+        };
+      });
+  
+})
+
+app.post('/fazer_login',function(requisicao, resposta){
+    let login = requisicao.body.login;
+    let senha = requisicao.body.senha;
+    console.log(login, senha);
+
+    var data = {db_login: login, db_senha: senha}
+
+    usuarios.find(data).toArray(function(err, items){
+        if(items.length == 0){
+            resposta.render("resposta2.ejs",{status: "usuario/senha não encontrado"})
+        }else if(err){
+            resposta.render("resposta2.ejs",{status: "erro ao logar"})
+        }else{
+            resposta.render("resposta2.ejs",{status: "usuario "+login+" logado"})
+        }
+            
+    })
+})
