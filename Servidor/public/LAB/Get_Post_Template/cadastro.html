@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Cadastro</title>
-        <meta charset="UTF-8">
-        <link href="estilo.css" rel="stylesheet">
-    </head>
-    <body>
-    <h1>Cadastro</h1>
-   </body>
+<head>
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <form action="/cadastra" method="POST">
+    <h2>Cadastro de Usuário</h2>
+    <input type="text" name="username" placeholder="Usuário" required>
+    <input type="password" name="password" placeholder="Senha" required>
+    <button type="submit">Cadastrar</button>
+  </form>
+</body>
 </html>
